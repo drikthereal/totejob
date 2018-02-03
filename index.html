@@ -5,7 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ToteJob</title>
+    <link href="https://fonts.googleapis.com/css?family=Amaranth:700" rel="stylesheet">
     <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            min-height: 100%;
+        }
         html {
             font-size: 62.5%;
             background-color: #007FFF;
@@ -14,12 +20,31 @@
             font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", Ubuntu, "Droid Sans", "Helvetica Neue", sans-serif;
             font-style: normal;
             font-size: 1.6rem;
-            font-weight: bold;
+            text-rendering: geometricPrecision;
+            line-height: 1.6em;
             color: #CAEAFD;
+        }
+        h1 {
+            font-family: 'Amaranth', sans-serif;
+            font-size: 5em;
+            letter-spacing: .05em;
+            text-align: center;
+            padding: .5em;
+        }
+        .content {
+            width: 50%;
+            margin: 0 auto;
+            padding: 15px 20px;
+            text-shadow: 1px 1px 2px rgba(34, 36, 50, 0.1);
+            text-align: center;
+            font-size: 1.4em;
         }
     </style>
 </head>
 <body>
-    hello world
+    <h1>ToteJob</h1>
+    <div class="content">
+        Oh hello! 👋
+    </div>
 </body>
 </html>
