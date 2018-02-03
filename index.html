@@ -21,30 +21,37 @@
             font-style: normal;
             font-size: 1.6rem;
             text-rendering: geometricPrecision;
-            line-height: 1.6em;
-            letter-spacing: .1em;
+            line-height: 2.5rem;
+            letter-spacing: .1rem;
             color: #CAEAFD;
             text-align: center;
             cursor: default;
             font-weight: 300;
         }
+        h1 {
+            font-size: 8rem;
+        }
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
         .title {
             font-family: 'Amaranth', sans-serif;
             font-weight: 700;
-            font-size: 5em;
             letter-spacing: .05em;
             text-align: center;
-            margin: 10vh auto;
-            padding: .5em;
-            line-height: 1em;
+            margin: 20vh auto;
+            line-height: 1;
             display: inline-block;
         }
         .content {
             width: 50%;
+            min-width: 350px;
             margin: 0 auto;
             padding: 15px 20px;
-            text-shadow: 1px 1px 2px rgba(34, 36, 50, 0.1);
-            font-size: 1.4em;
+            font-size: 2rem;
+        }
+        .flex-center {
             display: flex;
             justify-content: center;
         }
@@ -91,7 +98,7 @@
             transition: all .2s ease-out;
             content: '';
             position: absolute;
-            bottom: .55em;
+            top: 30%;
             left: 0;
             right: 0;
             margin: auto;
@@ -106,11 +113,14 @@
             animation-timing-function: ease-out;
         }
         @keyframes blink {
-            50% {
+            33% {
                 opacity: 1;
-                bottom: .4em;
+                top: 44%;
             }
-            100% {
+            66% {
+                top: 40%;
+            }
+            99% {
                 opacity: 0;
             }
         }
@@ -128,18 +138,142 @@
         .emoji:before {
             content: '👋';
             cursor: none;
-            font-size: 1.5em;
+            font-size: 4rem;
             margin-left: 10px;
         }
         .emoji:hover:before {
             content: '🤝';
         }
+        dl {
+            text-align: left;
+        }
+        dt {
+            font-weight: 600;
+            font-size: 1.2em;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: .5em 0;
+            border-radius: 4px;
+            margin: 1.5em 0;
+        }
+        dt:first-child {
+            margin-top: 0;
+        }
+        dd {
+            padding-bottom: .9em;
+            margin-bottom: 1.5em;
+            margin-left: 0;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        dd p, dd ul {
+            margin: .6em 0;
+        }
+        dd i {
+            text-decoration: underline;
+        }
+        .center {
+            text-align: center;
+        }
+        .btn {
+            display: inline-block;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 6px 8px;
+            font-size: 1.2em;
+            color: gold;
+        }
+        pre {
+            max-width: 100%;
+            white-space: pre-wrap;
+        }
     </style>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113535518-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-113535518-1');
+    </script>
 </head>
 <body>
     <h1 class="title"><span>T</span><span>o</span><span>t</span><span class="ehe">e</span><span>J</span><span>o</span><span>b</span></h1>
     <div class="content">
-        Oh hello! <span class="emoji"></span>
+        <!-- <div class="flex-center">
+            Oh hello! <span class="emoji"></span>
+        </div> -->
+
+        <dl>
+            <dt>What is ToteJob? 🤔</dt>
+            <dd>
+                <p>We can help you with <i>some</i> of your chores! 🙌 We can:</p>
+                <ul>
+                    <li>Do your <b>shopping</b></li>
+                    <li>Pick up your <b>laundry</b> from the dry cleaner 🧦</li>
+                    <li>We can even bring your <b>parcel</b> to the post office! 😮</li>
+                </ul>
+            </dd>
+
+            <dt>How much does it cost? 💰</dt>
+            <dd>
+                <p>This is our super simple pricing:</p>
+                <ul>
+                    <li><b>£1</b> / pickup location</li>
+                    <li><b>£1</b> / tote bag</li>
+                    <li><b>£2</b> / drop off location</li>
+                </ul>
+                <p>👉 <i>Example:</i></p>
+                <p>You need cereal, gherkins, mustard, soap, green tea and tampons from Tesco:</p>
+                <p>
+<pre>
+  1 pickup location (Tesco): £1
++ 1 tote bag (6 items): £1
++ 1 drop off location: £2
+-----------------------
+= Total ToteJob fee: <b>£4</b>
+</pre>
+                </p>
+                <p><i>Another one</i> ☝️</p>
+                <p>It's a lazy Sunday morning and you and your SO need a cappuccino and a mocha from Starbucks + 3 croissants from your favourite gluten free bakery ❤️</p>
+                <p>
+<pre>
+  2 pickup locations 
+  (Starbucks, your fav. bakery): £2
++ 1 tote bag (5 items): £1
++ 1 drop off location: £2
+-----------------------
+= Total ToteJob fee: <b>£5</b>
+</pre>
+                </p>
+                <p class="center">
+                    <i>(Total ToteJob fee does not include the price of the items!!1)</i>
+                </p>
+            </dd>
+
+            <dt>Where is it available? 🌍</dt>
+            <dd>
+                <p>Currently we only operate in <b>N7, London</b>.</p>
+            </dd>
+
+            <dt title="aka Shut up and take my money!">Where do I sign up?</dt>
+            <dd>
+                <p>You don't have to! 😉 Simpy <i>send us a text</i> and tell us:</p>
+                <ul>
+                    <li><b>WHAT</b> do you need?</li>
+                    <li><b>WHEN</b> do you need it?</li>
+                    <li><b>WHERE</b> do you live?</li>
+                </ul>
+                <p class="center">Our number is <a class="btn" href="sms:07378184633" title="Send a text to 07 37 818 4633">07 37 818 4633</a>️️✨</p>
+            </dd>
+
+            <dt>How do I pay? 💸</dt>
+            <dd>
+                <p>When we deliver the stuff you can either pay by cash or online (monzo.me or paypal).</p>
+            </dd>
+        </dl>
     </div>
 </body>
 </html>
