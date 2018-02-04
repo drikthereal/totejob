@@ -56,17 +56,13 @@
         .amount-box {
             font-family: 'Amaranth', sans-serif;
             font-weight: 400;
-            font-size: 2em;
             display: none;
         }
         .amount-box p {
-            margin: .5em auto 1em;
+            margin: .5em;
         }
-        .amount-box #amount:before {
-            content: '£';
-        }
-        .amount-box #amount {
-            font-size: 2em;
+        .amount-box .amount-with-currency {
+            font-size: 3em;
         }
         .pay-btn {
             background-color: rgba(255, 255, 255, .8);
@@ -97,6 +93,10 @@
             justify-content: center;
             align-items: center;
         }
+
+        body.loading a {
+            cursor: wait;
+        }
     </style>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -114,7 +114,8 @@
     <div class="content">
         <div class="amount-box">
             <p>Please pay</p>
-            <p><span id="amount"></span></p>
+            <p class="amount-with-currency">£<span id="amount"></span></p>
+            <p>using</p>
         </div>
 
         <div class="flex-center">
@@ -134,9 +135,26 @@
                 $amount.text(amount).parents('.amount-box').fadeIn(300);
                 $payButtons.each(function() {
                     var $this = $(this);
-                    $this.attr('href', $this.attr('href') + amount + $this.attr('data-link-suffix'));
+                    $this
+                        .attr('href', $this.attr('href') + amount + $this.attr('data-link-suffix'));
                 });
             }
+            $payButtons.on('click', function(e) {
+                e.preventDefault();
+                var $this = $(this);
+                var url = $this.attr('href');
+                var conf = {
+                    'event_category': 'outbound',
+                    'event_label': url,
+                    'transport_type': 'beacon',
+                    'event_callback': function(){document.location = url;}
+                };
+                if (amount) {
+                    conf.value = amount;
+                }
+                $('body').addClass('loading');
+                gtag('event', 'click', conf);
+            });
         });
     </script>
 </body>
