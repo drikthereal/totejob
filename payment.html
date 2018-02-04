@@ -133,12 +133,14 @@
             var $payButtons = $('.pay-btn');
             var amount = parseFloat(window.location.hash.substr(1), 10);
             if (amount) {
-                $amount.text(amount).parents('.amount-box').fadeIn(300);
-                $payButtons.each(function() {
-                    var $this = $(this);
-                    $this
-                        .attr('href', $this.attr('href') + amount + $this.attr('data-link-suffix'));
-                });
+                if (amount >= 1) {
+                    $amount.text(amount).parents('.amount-box').fadeIn(300);
+                    $payButtons.each(function() {
+                        var $this = $(this);
+                        $this
+                            .attr('href', $this.attr('href') + amount + $this.attr('data-link-suffix'));
+                    });
+                }
             }
             $payButtons.on('click', function(e) {
                 e.preventDefault();
