@@ -129,9 +129,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
         $(function() {
+            var $body = $('body');
             var $amount = $('#amount');
             var $payButtons = $('.pay-btn');
             var amount = parseFloat(parseFloat(window.location.hash.substr(1)).toFixed(2));
+            
+            $body.removeClass('loading');
+
             if (amount) {
                 if (amount >= 1) {
                     $amount.text(amount).parents('.amount-box').fadeIn(300);
@@ -155,7 +159,7 @@
                 if (amount) {
                     conf.value = amount;
                 }
-                $('body').addClass('loading');
+                $body.addClass('loading');
                 gtag('event', 'click', conf);
             });
         });
