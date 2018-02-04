@@ -133,8 +133,6 @@
             var $amount = $('#amount');
             var $payButtons = $('.pay-btn');
             var amount = parseFloat(parseFloat(window.location.hash.substr(1)).toFixed(2));
-            
-            $body.removeClass('loading');
 
             if (amount) {
                 if (amount >= 1) {
@@ -148,18 +146,21 @@
             }
             $payButtons.on('click', function(e) {
                 e.preventDefault();
+                $body.addClass('loading');
                 var $this = $(this);
                 var url = $this.attr('href');
                 var conf = {
                     'event_category': 'outbound',
                     'event_label': url,
                     'transport_type': 'beacon',
-                    'event_callback': function(){document.location = url;}
+                    'event_callback': function() {
+                        $body.removeClass('loading');
+                        document.location = url;
+                    }
                 };
                 if (amount) {
                     conf.value = amount;
                 }
-                $body.addClass('loading');
                 gtag('event', 'click', conf);
             });
         });
