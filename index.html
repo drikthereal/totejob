@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ToteJob 🙌 </title>
-    <meta property="og:title" content="ToteJob 🙌 " />
+    <meta property="og:title" content="ToteJob 🙌" />
     <meta property="og:description" content="We can help you with some of your chores: do the shopping, pick up your laundry or even pickup/drop off your parcel! YAY" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://totejob.com" />
@@ -125,14 +125,8 @@
             }
         }
         @keyframes wiggle {
-            0% {
-                letter-spacing: .05em;
-            }
             50% {
-                letter-spacing: .04em;
-            }
-            100% {
-                letter-spacing: .05em;
+                letter-spacing: .03em;
             }
         }
         dl {
@@ -158,7 +152,7 @@
             padding-right: 10px;
         }
         dd p, dd ul {
-            margin: .6em 0;
+            margin: .8em 0;
         }
         dd i {
             text-decoration: underline;
@@ -173,6 +167,12 @@
             padding: 6px 8px;
             font-size: 1.2em;
             color: gold;
+            letter-spacing: .05em;
+        }
+        .btn:hover {
+            animation-duration: .4s;
+            animation-name: wiggle;
+            animation-timing-function: ease-out;
         }
         pre {
             max-width: 100%;
@@ -180,7 +180,10 @@
         }
         a {
             font-weight: 400;
-            color: rgba(255, 255, 255, 0.8);
+            color: inherit;
+        }
+        a:hover {
+            text-decoration: none;
         }
     </style>
 
@@ -203,8 +206,8 @@
                 <p>We can help you with <i>some</i> of your chores! 🙌 </p>
                 <ul>
                     <li>Do your <b>shopping</b></li>
-                    <li>Pick up your <b>laundry</b> from the dry cleaner 🧦</li>
-                    <li>We can even bring your <b>parcel</b> to the post office! 😮</li>
+                    <li>Pickup your <b>laundry</b> from the dry cleaner 🧦</li>
+                    <li>Pickup/drop off your <b>parcel</b>! 📦</li>
                 </ul>
             </dd>
 
@@ -216,7 +219,7 @@
                     <li><b>£1</b> / tote bag</li>
                     <li><b>£2</b> / drop off location</li>
                 </ul>
-                <p>👉 <i>Example:</i></p>
+                <p>👉 <i>Here's an example:</i></p>
                 <p>You need cereal, gherkins, mustard, soap, green tea and tampons from Tesco:</p>
                 <p>
 <pre>
@@ -257,7 +260,10 @@
                     <li><b>WHEN</b> do you need it?</li>
                     <li><b>WHERE</b> do you live?</li>
                 </ul>
-                <p class="center">Our number is <a class="btn" href="sms:07378184633" title="Send a text to 07 37 818 4633">07 37 818 4633</a>️️✨</p>
+                <div class="center">
+                    <p>Text us on:</p>
+                    <p><a class="btn" href="sms:07378184633" title="Send a text to 07 37 818 4633">07 37 818 4633</a>️️✨</p>
+                </div>
             </dd>
 
             <dt>How do I pay? 💸</dt>
