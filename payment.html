@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ToteJob 🙌 </title>
+    <link href="https://fonts.googleapis.com/css?family=Amaranth:400,700" rel="stylesheet">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            min-height: 100%;
+        }
+        html {
+            font-size: 62.5%;
+            background-color: #007FFF;
+        }
+        body {
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", Ubuntu, "Droid Sans", "Helvetica Neue", sans-serif;
+            font-style: normal;
+            font-size: 1.6rem;
+            text-rendering: geometricPrecision;
+            line-height: 2.5rem;
+            letter-spacing: .1rem;
+            color: #CAEAFD;
+            text-align: center;
+            cursor: default;
+            font-weight: 300;
+        }
+        h1 {
+            font-size: 5rem;
+        }
+        .title {
+            font-family: 'Amaranth', sans-serif;
+            font-weight: 700;
+            letter-spacing: .05em;
+            text-align: center;
+            margin: 10vh auto;
+            line-height: 1;
+            display: inline-block;
+        }
+        .content {
+            width: 50%;
+            min-width: 320px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            font-size: 2rem;
+        }
+        .title .ehe {
+            display: inline-block;
+            position: relative;
+            transform: rotate(-10deg) translateX(-2px) scale(1.1);
+            color: rgb(255, 217, 0);
+        }
+        .amount-box {
+            font-family: 'Amaranth', sans-serif;
+            font-weight: 400;
+            font-size: 2em;
+            display: none;
+        }
+        .amount-box p {
+            margin: .5em auto 1em;
+        }
+        .amount-box #amount:before {
+            content: '£';
+        }
+        .amount-box #amount {
+            font-size: 2em;
+        }
+        .pay-btn {
+            background-color: rgba(255, 255, 255, .8);
+            color: transparent;
+            border-radius: 4px;
+            display: inline-block;
+            width: 120px;
+            height: 80px;
+            margin: 20px 15px;
+            overflow: hidden;
+            background-size: auto 60px;
+            background-repeat: no-repeat;
+            background-position: center;
+            transition: all .3s ease-in-out;
+        }
+        .pay-btn:hover {
+            background-color: rgba(255, 255, 255, 1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+        .pay-btn.monzo {
+            background-image: url(monzo.png);
+        }
+        .pay-btn.paypal {
+            background-image: url(paypal.png);
+        }
+        .flex-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113535518-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-113535518-1');
+    </script>
+</head>
+<body>
+    <h1 class="title"><span>T</span><span>o</span><span>t</span><span class="ehe">e</span><span>J</span><span>o</span><span>b</span></h1>
+    <h2>Payment</h2>
+    <div class="content">
+        <div class="amount-box">
+            <p>Please pay</p>
+            <p><span id="amount"></span></p>
+        </div>
+
+        <div class="flex-center">
+            <a href="https://monzo.me/adrianmeszaros/" class="pay-btn monzo" data-link-suffix="" title="Pay using Monzo">monzo.me</a>
+            or
+            <a href="https://www.paypal.me/AdrianMeszaros/" class="pay-btn paypal" data-link-suffix="gbp" title="Pay using PayPal">paypal.me</a>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(function() {
+            var $amount = $('#amount');
+            var $payButtons = $('.pay-btn');
+            var amount = parseFloat(window.location.hash.substr(1), 10);
+            if (amount) {
+                $amount.text(amount).parents('.amount-box').fadeIn(300);
+                $payButtons.each(function() {
+                    var $this = $(this);
+                    $this.attr('href', $this.attr('href') + amount + $this.attr('data-link-suffix'));
+                });
+            }
+        });
+    </script>
+</body>
+</html>
