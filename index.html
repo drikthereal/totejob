@@ -52,10 +52,6 @@
             padding: 0 20px;
             font-size: 2rem;
         }
-        .flex-center {
-            display: flex;
-            justify-content: center;
-        }
         .title:hover span:not(.ehe) {
             animation-duration: .4s;
             animation-name: wiggle;
@@ -187,6 +183,12 @@
         a:hover {
             text-decoration: none;
         }
+        .gold {
+            color: gold;
+        }
+        small {
+            font-size: .7em;
+        }
     </style>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -216,38 +218,41 @@
             <dd>
                 <p>This is our super simple pricing:</p>
                 <ul>
-                    <li><b>£1</b> / pickup location</li>
-                    <li><b>£1</b> / tote bag (~10 items, max 20 pounds)</li>
-                    <li><b>£1</b> / drop off location</li>
-                    <li><b>£1</b> delivery fee</li>
+                    <li><b>£1.5</b> / pickup location</li>
+                    <li><b>£1</b> / tote bag<span class="gold">*</span></li>
+                    <li><b>£1.5</b> / drop off location</li>
                 </ul>
-                <p>👉 <i>Here's an example:</i></p>
+                <p style="display: flex">
+                    <small><span class="gold">*</span> FREE if less than 5 items <b>and</b> 5 pounds!</small>&nbsp;😉
+                </p>
+                <br>
+                <p class="center">👉 <i>Here's an example:</i></p>
                 <p>You need cereal, gherkins, mustard, soap, toilet paper, green tea and tampons from Tesco:</p>
                 <p>
 <pre>
-  1 pickup location (Tesco): £1
+  1 pickup location (Tesco): £1.5
 + 1 tote bag (7 items): £1
-+ 1 drop off location: £1
-+ delivery fee: £1
++ 1 drop off location: £1.5
 -----------------------
 = Total ToteJob fee: <b>£4</b>
 </pre>
                 </p>
-                <p><i>Another one</i> 👇</p>
+                <br>
+                <p class="center"><i>Another one</i> 👇</p>
                 <p>It's a lazy Sunday morning and you and your SO need a cappuccino and a mocha from Starbucks + 2 croissants from your favourite gluten free bakery ❤️</p>
                 <p>
 <pre>
   2 pickup locations 
-  (Starbucks, your fav. bakery): £2
-+ 1 tote bag (4 items): £1
-+ 1 drop off location: £1
-+ delivery fee: £1
+  (Starbucks, your fav. bakery): £3
++ 1 tote bag (4 items): £0
++ 1 drop off location: £1.5
 -----------------------
-= Total ToteJob fee: <b>£5</b>
+= Total ToteJob fee: <b>£4.5</b>
 </pre>
                 </p>
+                <br>
                 <p class="center">
-                    <i>(Total ToteJob fee does not include the price of the items!!1)</i>
+                    👉 Total ToteJob fee does not include the price of the items! 👈
                 </p>
             </dd>
 
@@ -272,12 +277,12 @@
 
             <dt>How do I pay? 💸</dt>
             <dd>
-                <p>When we deliver the stuff you can either pay by cash or online using your debit card or PayPal.</p>
+                <p>When we deliver the stuff you can either pay by <b>cash</b> or online using your <b>debit card</b> or <b>PayPal</b>.</p>
             </dd>
 
             <dt>I have questions! 🤓</dt>
             <dd>
-                <p>Nice! You can send your questions to <a href="mailto:totejob@gmail.com">totejob@gmail.com</a></p>
+                <p>Nice! <a href="mailto:totejob@gmail.com">Drop us a line</a>.</p>
             </dd>
         </dl>
     </div>
