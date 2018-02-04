@@ -131,7 +131,7 @@
         $(function() {
             var $amount = $('#amount');
             var $payButtons = $('.pay-btn');
-            var amount = parseFloat(window.location.hash.substr(1), 10);
+            var amount = parseFloat(parseFloat(window.location.hash.substr(1)).toFixed(2));
             if (amount) {
                 if (amount >= 1) {
                     $amount.text(amount).parents('.amount-box').fadeIn(300);
