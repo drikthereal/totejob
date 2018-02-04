@@ -71,7 +71,7 @@
             display: inline-block;
             width: 120px;
             height: 80px;
-            margin: 20px 15px;
+            margin: 0 15px;
             overflow: hidden;
             background-size: auto 60px;
             background-repeat: no-repeat;
@@ -89,14 +89,11 @@
         .pay-btn.paypal {
             background-image: url(paypal.png);
         }
-        .flex-center {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        table {
+            margin: 20px auto;
         }
-
-        body.loading a {
-            cursor: wait;
+        small {
+            font-size: .7em;
         }
     </style>
 
@@ -119,17 +116,23 @@
             <p>using</p>
         </div>
 
-        <div class="flex-center">
-            <a href="https://monzo.me/adrianmeszaros/" class="pay-btn monzo" data-link-suffix="" title="Pay using Monzo">monzo.me</a>
-            or
-            <a href="https://www.paypal.me/AdrianMeszaros/" class="pay-btn paypal" data-link-suffix="gbp" title="Pay using PayPal">paypal.me</a>
-        </div>
+        <table>
+            <tr>
+                <td><a href="https://monzo.me/adrianmeszaros/" class="pay-btn monzo" data-link-suffix="" title="Pay using Monzo">monzo.me</a></td>
+                <td>or</td>
+                <td><a href="https://www.paypal.me/AdrianMeszaros/" class="pay-btn paypal" data-link-suffix="gbp" title="Pay using PayPal">paypal.me</a></td>
+            </tr>
+            <tr>
+                <td><small>Debit cards</small></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
         $(function() {
-            var $body = $('body');
             var $amount = $('#amount');
             var $payButtons = $('.pay-btn');
             var amount = parseFloat(parseFloat(window.location.hash.substr(1)).toFixed(2));
@@ -144,25 +147,6 @@
                     });
                 }
             }
-            $payButtons.on('click', function(e) {
-                e.preventDefault();
-                $body.addClass('loading');
-                var $this = $(this);
-                var url = $this.attr('href');
-                var conf = {
-                    'event_category': 'outbound',
-                    'event_label': url,
-                    'transport_type': 'beacon',
-                    'event_callback': function() {
-                        $body.removeClass('loading');
-                        document.location = url;
-                    }
-                };
-                if (amount) {
-                    conf.value = amount;
-                }
-                gtag('event', 'click', conf);
-            });
         });
     </script>
 </body>
